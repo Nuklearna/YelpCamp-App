@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <title>
+            YelpCamp App
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #453f34;">
+            <a class="navbar-brand" href="/"><i class="fab fa-earlybirds"></i> YelpCamp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class=" nav item ">
+                        <% if(!currentUser){ %>
+                            <a class="nav-link" href="/campgrounds">Home </a>
+                        <% } else { %>
+                            <li><a class="nav-link <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>" href="/campgrounds">Home </a></li>
+                            <li><a class="nav-link <%= typeof page !== 'undefined' && page === 'users/:id' ? 'active' : '' %>" href="/users/<%= currentUser.id %>">Profile </a></li>
+                         <% } %>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <% if(!currentUser){ %>
+                        <li><a class="nav-link <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                        <li><a class="nav-link <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>" href="/register"><i class="fas fa-user"></i> Sign Up </a></li>
+                    <% } else { %>
+                        <li><a class="nav-link"  href="#"><i class="fas fa-user"></i> Signed In As <%= currentUser.username %></a></li>
+                        <li><a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout </a></li>
+                    <% } %>
+                    <form class="form-inline" action="/campgrounds" method="GET">
+                        <input class="form-control form-control-sm mr-sm-2" type="search" name="search" placeholder="Search campgrounds..." aria-label="Search">
+                        <button class="btn btn-dark btn-sm" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </ul>   
+            </div>
+        </nav>
+        <div class="container">
+            <% if(error && error.length > 0) {%>
+                <div class="alert alert-danger" role="alert">
+                    <%= error%>
+                </div>
+            <% }%>
+            <% if(success && success.length > 0) {%>
+                <div class="alert alert-success" role="alert">
+                    <%= success%>
+                </div>
+            <% }%>
+        </div>
+        
+     

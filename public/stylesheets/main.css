@@ -1,0 +1,77 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+a {
+    color: #453f34;
+}
+.content {
+    min-height: 100%;
+}
+.content-inside{
+    padding-bottom: 50px;
+}
+.card{
+    margin-top: 2rem;
+}
+.card-body{
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+.float-right{
+    padding-right: 0.5rem;
+}
+.float-left, p{
+    padding-left: 0.5rem;
+}
+.delete-form{
+    display: inline;
+    padding-left: 0.5rem;
+}
+.container{
+    margin-top: 1rem;
+}
+.jumbotron{
+    background-color: #e6dfd5;
+}
+.btn-dark{
+    background-color: #453f34;
+    border-color: #453f34;
+}
+.col-md-3{
+    margin-top: 1.5rem;
+}
+.caption{
+    padding-top: 1rem;
+}
+.bg-light{
+    background-color: #e6dfd5!important;
+}
+.footer{
+    height:50px;
+    margin-top:-50px;
+    background-color: #453f34;
+    color:#fff;
+}
+.footer-p {
+    text-align: center;
+    padding-top: 12px;
+}
+.footer, a:hover{
+    color: #e6dfd5;
+}
+.f-a{
+  color: #e6dfd5;  
+}
+.list-group-item.active{
+    background-color: #e6dfd5;
+    border-color: #e6dfd5;
+    color: #453f34;
+    font-weight: 500;
+}
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 0.5em;
+}

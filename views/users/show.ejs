@@ -1,0 +1,44 @@
+<% include ../partials/header %>
+  <div class="content">
+    <div class="content-inside">
+      <div class="container">
+          <div class="row">
+          	<div class="col-md-3">
+          		<div class="card" style="margin-top:10px; border:none;">
+          		    <p class="display-4"><%= user.firstName + " " + user.lastName %></p>
+            			<img class="card-img-top" src="<%= user.avatar %>/100px100/" alt="user profile image">
+            			<div class="card-body">
+              			<div class="card-text">
+              			  E-mail: <a href="mailto:<%= user.email %>"><%= user.email %></a>
+              			  <div class="lead" style="margin-top:5px;"> <%= user.username %>'s campgrounds:</div>
+          		          <ul>
+                		      <% campgrounds.forEach(function(campground) { %>
+                			    <li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
+                		      <% }); %>
+              		      </ul>
+              			 </div>
+          		    </div>
+          		</div>
+          	</div>
+          	<div class="col-md-9">
+          	    <div class="card" style="border:0px;">
+          	        <div class="card-body">
+                  	    <p class="h3">About me</p>
+                  	    <hr class="my-4">
+                  		  <p class="text-justify"><%= user.aboutMe %></p>
+                    		<% if(currentUser && user.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                    		 <p class=" float-right">
+                    		   <a class="btn btn-sm btn-warning" 
+                    		   href="/users/<%=user._id %>/edit">
+                    		   Edit
+                    		  </a>
+                    		 </p>
+                  		  <% }%>
+              		</div>
+          	    </div>
+          	</div>
+          </div>
+      </div>
+    </div>
+  </div>
+<% include ../partials/footer %>
