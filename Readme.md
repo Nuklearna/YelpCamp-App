@@ -71,11 +71,6 @@ This version contains a few tweaks beyond what was coded in the class.
 * [ejs](http://ejs.co/)
 * [Google Maps APIs](https://cloud.google.com/maps-platform/)
 
-## Deployment
-
-* Heroku [see live](https://fathomless-mountain-20455.herokuapp.com/)
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
